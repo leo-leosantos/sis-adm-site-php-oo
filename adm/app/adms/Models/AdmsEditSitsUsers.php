@@ -53,7 +53,7 @@ class AdmsEditSitsUsers
         $viewUser = new \App\adms\Models\helper\AdmsRead();
         $viewUser->fullRead(
             "SELECT id, name, adms_color_id
-                            FROM adms_sits_users
+                            FROM adms_sists_users
                             WHERE id=:id
                             LIMIT :limit",
             "id={$this->id}&limit=1"
@@ -97,7 +97,7 @@ class AdmsEditSitsUsers
         $this->data['modified'] = date("Y-m-d H:i:s");
 
         $upSitUser = new \App\adms\Models\helper\AdmsUpdate();
-        $upSitUser->exeUpdate("adms_sits_users", $this->data, "WHERE id=:id", "id={$this->data['id']}");
+        $upSitUser->exeUpdate("adms_sists_users", $this->data, "WHERE id=:id", "id={$this->data['id']}");
 
         if ($upSitUser->getResult()) {
             $_SESSION['msg'] = "<p class='alert-success'>Situação editada com sucesso!</p>";

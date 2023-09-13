@@ -12,7 +12,7 @@ if(!defined('C8L6K7E')){
  * 
  * @author Cesar <cesar@celke.com.br>
  */
-class ConfigView
+class ConfigViewSts
 {
     
     /**

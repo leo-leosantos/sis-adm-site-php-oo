@@ -86,7 +86,7 @@ class AdmsListUsers
                     sit.name AS name_sit,
                     col.color
                     FROM adms_users AS usr
-                    INNER JOIN adms_sits_users AS sit ON sit.id=usr.adms_sits_user_id
+                    INNER JOIN adms_sists_users AS sit ON sit.id=usr.adms_sits_user_id
                     INNER JOIN adms_colors AS col ON col.id=sit.adms_color_id
                     ORDER BY usr.id DESC
                     LIMIT :limit OFFSET :offset", "limit={$this->limitResult}&offset={$pagination->getOffset()}");
@@ -148,7 +148,7 @@ class AdmsListUsers
                     sit.name AS name_sit,
                     col.color
                     FROM adms_users AS usr
-                    INNER JOIN adms_sits_users AS sit ON sit.id=usr.adms_sits_user_id
+                    INNER JOIN adms_sists_users AS sit ON sit.id=usr.adms_sits_user_id
                     INNER JOIN adms_colors AS col ON col.id=sit.adms_color_id
                     WHERE usr.name LIKE :search_name 
                     ORDER BY usr.id DESC
@@ -179,7 +179,7 @@ class AdmsListUsers
                     sit.name AS name_sit,
                     col.color
                     FROM adms_users AS usr
-                    INNER JOIN adms_sits_users AS sit ON sit.id=usr.adms_sits_user_id
+                    INNER JOIN adms_sists_users AS sit ON sit.id=usr.adms_sits_user_id
                     INNER JOIN adms_colors AS col ON col.id=sit.adms_color_id
                     WHERE usr.email LIKE :search_email
                     ORDER BY usr.id DESC
@@ -213,7 +213,7 @@ class AdmsListUsers
                     sit.name AS name_sit,
                     col.color
                     FROM adms_users AS usr
-                    INNER JOIN adms_sits_users AS sit ON sit.id=usr.adms_sits_user_id
+                    INNER JOIN adms_sists_users AS sit ON sit.id=usr.adms_sits_user_id
                     INNER JOIN adms_colors AS col ON col.id=sit.adms_color_id
                     WHERE usr.name LIKE :search_name 
                     OR usr.email LIKE :search_email

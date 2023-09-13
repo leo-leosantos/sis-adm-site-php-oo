@@ -54,7 +54,7 @@ class AdmsViewSitsUsers
         $viewSitUser = new \App\adms\Models\helper\AdmsRead();
         $viewSitUser->fullRead("SELECT sit.id, sit.name, sit.created, sit.modified,
                             col.color
-                            FROM adms_sits_users AS sit
+                            FROM adms_sists_users AS sit
                             INNER JOIN adms_colors AS col ON col.id=sit.adms_color_id
                             WHERE sit.id=:id
                             LIMIT :limit", "id={$this->id}&limit=1");

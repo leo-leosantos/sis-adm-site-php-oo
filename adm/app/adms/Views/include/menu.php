@@ -55,6 +55,28 @@ if (isset($this->data['sidebarActive'])) {
         } ?>
         <a href="<?php echo URLADM; ?>list-conf-emails/index" class="sidebar-nav <?php echo $list_conf_emails; ?>"><i class="icon fa-solid fa-envelope"></i><span>Configurações de E-mail</span></a>
 
+
+        <?php 
+        $sidebar_page_home = "";
+        $list_page_home = "";
+        if ($sidebar_active == "view-page-home") {
+            $list_page_home = "active";
+            $sidebar_page_home = "active";
+        } ?>
+
+        <button class="dropdown-btn <?php echo $sidebar_page_home; ?>">
+            <i class="icon fa-solid fa-globe"></i><span>Site</span><i class="fa-solid fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container <?php echo $sidebar_page_home; ?>">
+            <a href="<?php echo URLADM; ?>view-page-home/index" class="sidebar-nav <?php echo $list_page_home; ?>">
+            <i class="icon fa-solid fa-home"></i><span>Home</span></a>
+           
+        </div>
+
+
+
+
+
         <a href="<?php echo URLADM; ?>logout/index" class="sidebar-nav"><i class="icon fa-solid fa-arrow-right-from-bracket"></i><span>Sair</span></a>
 
     </div>

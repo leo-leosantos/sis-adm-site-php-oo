@@ -72,13 +72,13 @@ class AdmsListSitsUsers
 
         $pagination = new \App\adms\Models\helper\AdmsPagination(URLADM . 'list-sits-users/index');
         $pagination->condition($this->page, $this->limitResult);
-        $pagination->pagination("SELECT COUNT(usr.id) AS num_result FROM adms_sits_users usr");
+        $pagination->pagination("SELECT COUNT(usr.id) AS num_result FROM adms_sists_users usr");
         $this->resultPg = $pagination->getResult();
 
         $listSitsUsers = new \App\adms\Models\helper\AdmsRead();
         $listSitsUsers->fullRead("SELECT sit.id, sit.name,
                             col.color 
-                            FROM adms_sits_users sit
+                            FROM adms_sists_users sit
                             INNER JOIN adms_colors AS col ON col.id=sit.adms_color_id
                             ORDER BY sit.id DESC
                             LIMIT :limit OFFSET :offset", "limit={$this->limitResult}&offset={$pagination->getOffset()}");
@@ -110,14 +110,14 @@ class AdmsListSitsUsers
         $pagination = new \App\adms\Models\helper\AdmsPagination(URLADM . 'list-sits-users/index', "?search_name={$this->searchName}");
         $pagination->condition($this->page, $this->limitResult);
         $pagination->pagination("SELECT COUNT(sit.id) AS num_result 
-                                FROM adms_sits_users sit
+                                FROM adms_sists_users sit
                                 WHERE sit.name LIKE :search_name", "search_name={$this->searchNameValue}");
         $this->resultPg = $pagination->getResult();
 
         $listSitsUsers = new \App\adms\Models\helper\AdmsRead();
         $listSitsUsers->fullRead("SELECT sit.id, sit.name,
                             col.color 
-                            FROM adms_sits_users sit
+                            FROM adms_sists_users sit
                             INNER JOIN adms_colors AS col ON col.id=sit.adms_color_id
                             WHERE sit.name LIKE :search_name 
                             ORDER BY sit.id DESC

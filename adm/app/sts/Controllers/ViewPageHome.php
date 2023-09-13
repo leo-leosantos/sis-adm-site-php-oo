@@ -24,9 +24,9 @@ class ViewPageHome
         $viewHome =  new StsViewPageHome();
         $viewHome->viewPageHome();
 
-        $this->data['sidebarActive'] = "dashboard"; 
-        $loadView = new \Core\ConfigView("sts/Views/home/viewPageHome", $this->data);
-        $loadView->loadView();
+        $this->data['sidebarActive'] = "view-page-home"; 
+        $loadView = new \App\sts\core\ConfigViewSts("sts/Views/home/viewPageHome", $this->data);
+        $loadView->loadViewSts();
     }
 
   

@@ -118,7 +118,7 @@ class AdmsAddUsers
     public function listSelect(): array
     {
         $list = new \App\adms\Models\helper\AdmsRead();
-        $list->fullRead("SELECT id id_sit, name name_sit FROM adms_sits_users ORDER BY name ASC");
+        $list->fullRead("SELECT id id_sit, name name_sit FROM adms_sists_users ORDER BY name ASC");
         $registry['sit'] = $list->getResult();
 
         $this->listRegistryAdd = ['sit' => $registry['sit']];
