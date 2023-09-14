@@ -22,9 +22,18 @@ class ViewPageHome
     public function index(int|string|null $id = null): void
     {
         $viewHome =  new StsViewPageHome();
-        $viewHome->viewPageHome();
+        $viewHome->viewPageHomeTop();
+        $this->data['viewHomeTop'] =  $viewHome->getResultBdTop();
+
+        $viewHome->viewPageHomeServ();
+        $this->data['viewHomeServ'] = $viewHome->getResultBdServ();
+
+        
+        $viewHome->viewPageHomePrem();
+        $this->data['viewHomePrem'] = $viewHome->getResultBdPrem();
 
         $this->data['sidebarActive'] = "view-page-home"; 
+
         $loadView = new \App\sts\core\ConfigViewSts("sts/Views/home/viewPageHome", $this->data);
         $loadView->loadViewSts();
     }

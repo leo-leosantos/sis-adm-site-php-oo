@@ -30,13 +30,13 @@ abstract class Config
     {
         //URL do projeto
         define('URL', 'http://localhost/admsite/');
-        define('URLADM', 'http://localhost/celke/adm/');
+        define('URLADM', 'http://localhost/admsite/adm/');
 
         define('CONTROLLER', 'Home');
         define('CONTROLLERERRO', 'Erro');
 
         //Credenciais do banco de dados
-        define('HOST', '127.0.0.1' );//nome do host no docker
+        define('HOST', '127.0.0.1' );
         define('USER','root');
         define('PASS','');
         define('DBNAME','celke_site');
