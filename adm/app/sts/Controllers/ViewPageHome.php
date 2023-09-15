@@ -16,10 +16,9 @@ class ViewPageHome
 {
     private array|string|null $data;
 
-    private int|string|null $id;
 
   
-    public function index(int|string|null $id = null): void
+    public function index(): void
     {
         $viewHome =  new StsViewPageHome();
         $viewHome->viewPageHomeTop();

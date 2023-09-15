@@ -113,7 +113,7 @@ class CarregarPgAdm
          "ListSitsUsers", "ViewSitsUsers", "AddSitsUsers", "EditSitsUsers", "DeleteSitsUsers", 
          "ListColors", "ViewColors", "AddColors", "EditColors", "DeleteColors", "ListConfEmails", 
          "ViewConfEmails", "AddConfEmails", "EditConfEmails", "EditConfEmailsPassword", 
-         "DeleteConfEmails", "ViewPageHome","EditHomeTop"];
+         "DeleteConfEmails", "ViewPageHome","EditHomeTop","EditHomeTopImg"];
         if(in_array($this->urlController, $this->listPgPrivate)){
             $this->verifyLogin();
         }else{

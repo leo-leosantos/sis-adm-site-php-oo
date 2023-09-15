@@ -27,6 +27,7 @@ if (!defined('C8L6K7E')) {
             <div class="top-list-right">
                 <?php
                 if (!empty($this->data['viewHomeTop'])) {
+                    // var_dump($this->data['viewHomeTop'][0]['id']);
                     echo "<a href='" . URLADM . "edit-home-top/index' class='btn-warning'>Editar</a> ";
                     echo "<a href='" . URLADM . "edit-home-top-img/index' class='btn-warning'>Editar Imagem</a> ";
                 }
