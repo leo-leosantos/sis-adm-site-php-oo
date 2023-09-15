@@ -36,7 +36,7 @@ abstract class Config
         define('HOST', 'localhost');
         define('USER', 'root');
         define('PASS', '');
-        define('DBNAME', 'celke_site');
+        define('DBNAME', 'celke');
         define('PORT', 3306);
 
         define('EMAILADM', 'cesar@celke.com.br');
