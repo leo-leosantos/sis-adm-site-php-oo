@@ -3,6 +3,7 @@
 namespace App\sts\Models;
 
 use App\adms\Models\helper\AdmsValEmptyField;
+use App\sts\Models\helper\StsUploadImg;
 
 if(!defined('C8L6K7E')){
     header("Location: /");
@@ -18,6 +19,7 @@ class StsEditHomeTopImg
 
     /** @var array|null $resultBd Recebe os registros do banco de dados */
     private array|null $resultBd;
+    private string $directory;
 
     /**
      * @return bool Retorna true quando executar o processo com sucesso e false quando houver erro
@@ -44,7 +46,7 @@ class StsEditHomeTopImg
 
         $viewHomeTopImg = new \App\adms\Models\helper\AdmsRead();
         $viewHomeTopImg->fullRead(
-            "SELECT image_top
+            "SELECT id ,image_top
                             FROM sts_homes_tops
                             LIMIT :limit", "limit=1");
 
@@ -120,10 +122,13 @@ class StsEditHomeTopImg
 
         $this->directory = "app/sts/assets/images/home_top/";
 
-        $uploadImgRes = new \App\adms\Models\helper\AdmsUploadImgRes();
-        $uploadImgRes->upload($this->dataImagem, $this->directory, $this->nameImg, 1987, 604);        
+       // $uploadImgRes = new \App\adms\Models\helper\AdmsUploadImgRes();
+        //$uploadImgRes->upload($this->dataImagem, $this->directory, $this->nameImg, 1987, 604);        
 
-        if($uploadImgRes->getResult()){
+
+        $uploadImg = new StsUploadImg();
+        $uploadImg->upload($this->directory, $this->dataImagem, $this->nameImg);
+        if($uploadImg->getResult()){
             $this->edit();
         }else{
             $this->result = false;

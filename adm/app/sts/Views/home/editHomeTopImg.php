@@ -53,8 +53,8 @@ if (isset($this->data['form'][0])) {
                             $image_top = $valorForm['image_top'];
                         }
                         ?>
-                        <label class="title-input">Imagem:<span class="text-danger">*</span>1987x604</label>
-                        <input type="file" name="new_image" id="new_image" class="input-adm" onchange="inputFileValImg()">
+                        <label class="title-input">Imagem:<span class="text-danger">*</span></label>
+                        <input type="file" name="new_image" id="new_image" class="input-adm" onchange="inputFileValImgSts()">
                     </div>
                     <div class="column">
                         <?php

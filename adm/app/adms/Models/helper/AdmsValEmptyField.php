@@ -44,8 +44,8 @@ class AdmsValEmptyField
         $this->data = array_map('strip_tags', $this->data);
         $this->data = array_map('trim', $this->data);
 
-        var_dump($this->data );
-        die();
+        // var_dump($this->data );
+        // die();
         if(in_array('', $this->data)){
             $_SESSION['msg'] = "<p class='alert-danger'>Erro: Necessário preencher todos os campos valfiled!</p>";
             $this->result = false;

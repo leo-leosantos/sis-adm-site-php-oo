@@ -2,6 +2,7 @@
 
 namespace App\sts\Controllers;
 
+use App\sts\core\ConfigViewSts;
 use App\sts\Models\StsEditHomeTopImg;
 
 if(!defined('C8L6K7E')){
@@ -60,8 +61,8 @@ class EditHomeTopImg
      */
     private function viewEditHomeTopImg(): void
     {
-        $loadView = new \Core\ConfigView("sts/Views/home/editHomeTopImg", $this->data);
-        $loadView->loadView();
+        $loadView = new ConfigViewSts("sts/Views/home/editHomeTopImg", $this->data);
+        $loadView->loadViewSts();
     }
 
     /**
@@ -78,7 +79,7 @@ class EditHomeTopImg
             unset($this->dataForm['SendEditHomeTopImg']);
 
             $this->dataForm['new_image'] = $_FILES['new_image'] ? $_FILES['new_image'] : null;
-            var_dump($this->dataForm);
+           // var_dump($this->dataForm);
 
             $editHomeTopImg = new StsEditHomeTopImg();
             $editHomeTopImg->update($this->dataForm);

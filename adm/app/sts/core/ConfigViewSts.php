@@ -37,7 +37,7 @@ class ConfigViewSts
             include 'app/adms/Views/include/navbar.php';
             include 'app/adms/Views/include/menu.php';
             include 'app/' .$this->nameView . '.php';
-            include 'app/adms/Views/include/footer.php';
+            include 'app/sts/Views/include/footer.php';
         }else{
             die("Erro - 008: Por favor tente novamente. Caso o problema persista, entre em contato o administrador " . EMAILADM);
         }
